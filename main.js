@@ -100,5 +100,6 @@ function getRandomSymbol() {
 // slider helper
 
 function slider(value) {
-    document.querySelector(".range-number").textContent = value;
-  }
+  document.querySelector(".range-number").textContent = value;
+}
+
