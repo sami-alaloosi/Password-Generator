@@ -1,5 +1,5 @@
 ## Overview
-This tool will allow you to automatically generate a passwords based on guidelines that you set to create strong and unpredictable passwords for each of your accounts.
+This tool will allow you to automatically generate passwords based on guidelines that you set to create strong and unpredictable passwords for each of your accounts.
 
 
 ![](images/password.jpg)
