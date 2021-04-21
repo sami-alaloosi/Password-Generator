@@ -1,0 +1,243 @@
+/** @format */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  line-height: 1.7;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(
+    60deg,
+    rgba(84, 58, 183, 1) 0%,
+    rgba(0, 172, 193, 1) 100%
+  );
+  color: white;
+  
+}
+
+.inner-header {
+  height: 85vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .inner-header {
+    height: 80vh;
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+
+  
+  .main-text {
+    font-size: 2rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+  
+  .sub-text {
+    font-size: 2rem;
+    animation: moveInRight 1s ease-out;
+    margin-bottom: 6rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+
+
+  /* button */
+  .btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--green {
+  margin-top: 10rem;
+  background-color: #55c57a ;
+  color: #fff;
+}
+.btn--green::after {
+  background-color: #55c57a;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+/* waves */
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 56.25em) {
+    .waves {
+      height: 40px;
+      min-height: 40px;
+    }
+  }
+
+
+
+/* Wave Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+
+
+/* Other Animations */
+@keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
+    80% {
+      transform: translateX(1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+    80% {
+      transform: translateX(-1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Password Generator</title>
+</head>
+
+<body>
+
+
+
+    <header class="header">
+
+        <div class="inner-header flex">
+
+            <div class="text-box">
+                <h1 class="main-text">Password Generator</h1>
+                <p class="sub-text">Need a password? In few easy steps, generate strong, unique, and random passwords for each and every one of your accounts.</p>
+
+                <a href="#main_section" class="btn btn--green btn--animated">Generat New Password</a>
+            </div>
+        </div>
+
+        <!--Waves Container-->
+        <div>
+
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+
+    </header>
+
+    <main class="main">
+        <div class="container" id="main_section">
+            <h2 class="Generator-text">Password Generator</h2>
+            <div class="result-container">
+                <span id="result"></span>
+                <button class="main-btn" id="clipboard">
+                    <i class="far fa-clipboard"></i>
+                </button>
+            </div>
+            <div class="settings">
+                <div class="setting">
+
+                    <label>Password length</label>
+                    <div class=" range"> <input type="range" id="length" min='0' max='20' value='20'
+                            onchange="slider(value)" onmousemove="slider(value)" class="slider" />
+                        <span class="range-number">20</span>
+                    </div>
+
+
+                </div>
+                <div class="setting">
+                    <label>Include uppercase letters</label>
+                    <input type="checkbox" id="uppercase" class="toggle" checked />
+                </div>
+                <div class="setting">
+                    <label>Include lowercase letters</label>
+                    <input type="checkbox" id="lowercase" class="toggle" checked />
+                </div>
+                <div class="setting">
+                    <label>Include numbers</label>
+                    <input type="checkbox" id="numbers" class="toggle" checked />
+                </div>
+                <div class="setting">
+                    <label>Include symbols</label>
+                    <input type="checkbox" id="symbols" class="toggle" checked />
+                </div>
+            </div>
+            <button class="main-btn generater-btn-large" id="generate">
+                Generate password
+            </button>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
